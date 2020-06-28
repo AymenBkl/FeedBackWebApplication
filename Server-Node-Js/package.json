@@ -9,6 +9,9 @@
   "author": "Aymen Abdelmoumen Boukhelkhal",
   "license": "ISC",
   "dependencies": {
-    "express-generator": "^4.16.1"
+    "bootstrap": "^4.5.0",
+    "express-generator": "^4.16.1",
+    "jquery": "^3.5.1",
+    "ngx-bootstrap": "^5.6.1"
   }
 }
