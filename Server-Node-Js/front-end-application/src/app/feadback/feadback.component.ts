@@ -103,12 +103,11 @@ export class FeadbackComponent implements OnInit {
       .subscribe(feedback => {
         this.onProgress = "Normal";
         this.openSnackBar("Thnak You ! ","SUCESS")
-        console.log(feedback);
+        this.feedbacks.push(feedback);
       },
       error => {
         this.onProgress = "Error";
         this.openSnackBar("Something Went Wrong","ERROR")
-        console.log(error);
       }  )
   }
 

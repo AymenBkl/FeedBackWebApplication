@@ -1,22 +1,23 @@
 
+<section id="feedback" class="d-flex align-items-center">
+
 <div fxFlex
       fxLayout="column">
+      <div class="section-title">
+        <h2>FEEDBACKS </h2>
+      </div>
+      <section id="feedback" class="d-flex align-items-center">
 
-<div fxFlex fxFlexOffset="20px" class="form-size" >
-  <mat-card class="card-container">
-    <mat-card-header class="text-container">
-      <p class="text-container">
-        USERS FEEDBACKS
-      </p>
-      </mat-card-header>
+<div fxFlex fxFlexOffset="20px" class="form-size">
+
 <mat-list >
-  <mat-list-item  *ngFor="let feedback of feedbacks" [style.height]="'150px'" appFeedbackhighlight [@expand]>
+  <mat-list-item  *ngFor="let feedback of feedbacks" [style.height]="'150px'" [@expand] appFeedbackhighlight>
     <div fxFlex fxFlexOffset="20px" class="basic-container">
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{feedback.firstName | uppercase}} {{feedback.lastName | uppercase}} </mat-card-title>
-        <mat-card-subtitle>{{feedback.rating | number }}</mat-card-subtitle>
+        <mat-card-subtitle>{{feedback.rating }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <p>
@@ -28,10 +29,17 @@
 
   </mat-list-item>
 </mat-list>
-</mat-card>
-
 </div>
+</section>
+
+<div class="section-title">
+  <h2>WE WANT TO HEAR FROM YOU ! </h2>
+</div>
+
 <div fxFlex fxFlexOffset="20px" class="form-size">
+  <div fxFlex="30"></div>
+  <section id="submitfeedback" class="d-flex align-items-center">
+
 <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()"  >
   <p>
     <mat-form-field class="half-width">
@@ -83,6 +91,7 @@
 </div>
 
 </form>
+</section>
 
 </div>
 </div>

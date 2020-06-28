@@ -23,6 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule} from '@angular/material';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { RouterModule } from './router/router.module';
 
 
 
@@ -37,6 +38,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     FeedbackhighlightDirective
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
