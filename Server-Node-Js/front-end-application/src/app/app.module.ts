@@ -25,7 +25,7 @@ import { RoutersModule } from './routers/routers.module';
     HeaderComponent,
     FooterComponent,
     FeedbackComponent,
-    HighlightFeedbackDirective,
+    HighlightFeedbackDirective
   ],
   imports: [
     BrowserModule,
