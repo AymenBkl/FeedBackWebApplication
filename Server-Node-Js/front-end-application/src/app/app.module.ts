@@ -6,10 +6,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { FeadbackComponent } from './feadback/feadback.component';
+import { FeedbackhighlightDirective } from './Directive/feedbackhighlight.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    FeadbackComponent,
+    FeedbackhighlightDirective
   ],
   imports: [
     BrowserModule,
