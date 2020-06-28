@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -123,5 +124,10 @@
       }
     }
   },
-  "defaultProject": "front-end-application"
+  "defaultProject": "front-end-application",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
