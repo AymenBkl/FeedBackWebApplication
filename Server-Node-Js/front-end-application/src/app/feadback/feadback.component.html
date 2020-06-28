@@ -1,25 +1,20 @@
 <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()"  >
   <p>
     <mat-form-field class="half-width">
-      <input matInput formControlName="firstname" placeholder="First Name" type="text" required>
-      <mat-error *ngIf="formErrors.firstname">
-        {{formErrors.firstname}}
+      <input matInput formControlName="firstName" placeholder="First Name" type="text" required>
+      <mat-error *ngIf="formErrors.firstName">
+        {{formErrors.firstName}}
       </mat-error>
     </mat-form-field>
     <mat-form-field class="half-width">
-      <input matInput formControlName="lastname" placeholder="Last Name" type="text" required>
-      <mat-error *ngIf="formErrors.lastname">
-        {{formErrors.lastname}}
+      <input matInput formControlName="lastName" placeholder="Last Name" type="text" required>
+      <mat-error *ngIf="formErrors.lastName">
+        {{formErrors.lastName}}
       </mat-error>
     </mat-form-field>
   </p>
   <p>
-    <mat-form-field class="half-width">
-      <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel" pattern="[0-9]*" required>
-      <mat-error *ngIf="formErrors.telnum">
-        {{formErrors.telnum}}
-      </mat-error>
-    </mat-form-field>
+
     <mat-form-field class="half-width">
       <input matInput formControlName="email" placeholder="Email" type="email" email required>
       <mat-error *ngIf="formErrors.email">
@@ -30,8 +25,11 @@
 
   <p>
     <mat-form-field class="full-width">
-      <textarea matInput formControlName="message" placeholder="Your Feedback" rows=12></textarea>
+      <textarea matInput formControlName="feedbackMessage" placeholder="Your Feedback" rows=12></textarea>
     </mat-form-field>
+    <mat-error *ngIf="formErrors.feedbackMessage">
+      {{formErrors.feedbackMessage}}
+    </mat-error>
   </p>
   <button type="submit" mat-button class="background-primary text-floral-white"
   [disabled]="feedbackForm.invalid">
