@@ -124,7 +124,8 @@ export class FeadbackComponent implements OnInit {
     this.feedbackService.getFeedbacks()
         .subscribe(
           feedbacks => {
-            this.feedbacks = feedbacks.slice(0,5);
+            const len = feedbacks.length;
+            this.feedbacks = feedbacks.slice(len-5,len);
           },
           error => {
             console.log(error);
