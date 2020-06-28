@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild } from '@angular/core';
+import { Component, OnInit , ViewChild, Injectable } from '@angular/core';
 import { Feedback } from '../Models/feedback';
 import { FormGroup , FormBuilder , Validator, Validators} from '@angular/forms';
 import { validationMessages } from './formsValidation';
@@ -23,7 +23,7 @@ export class FeadbackComponent implements OnInit {
 
   constructor(private foormBuilder : FormBuilder,
               private feedbackService : FeedbackService,
-              private snackBar : MatSnackBar) {
+              public snackBar : MatSnackBar) {
     this.createForm();
    }
 

@@ -18,6 +18,9 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material';
 import { FeedbackService } from './Services/feedback.service';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { MatSnackBarModule} from '@angular/material';
+
 
 
 
@@ -27,7 +30,8 @@ import { FeedbackService } from './Services/feedback.service';
     HeaderComponent,
     FooterComponent,
     FeadbackComponent,
-    FeedbackhighlightDirective
+    FeedbackhighlightDirective,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +45,14 @@ import { FeedbackService } from './Services/feedback.service';
     MatProgressSpinnerModule,
     MatButtonModule,
     MatSliderModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [
     FeedbackService
+  ],
+  entryComponents :  [
+    SnackBarComponent
   ],
   bootstrap: [AppComponent]
 })
