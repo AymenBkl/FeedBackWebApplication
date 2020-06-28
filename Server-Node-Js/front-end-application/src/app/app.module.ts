@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatGridList} from '@angular/material/grid-list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import 'hammerjs';
 //----- Components ----//
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +17,7 @@ import { HighlightFeedbackDirective } from './Directives/highlight-feedback.dire
 
 import { FeedbackService} from './Services/feedback.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RoutersModule } from './routers/routers.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +30,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     MatGridList,
-    HttpClientModule
-
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    RoutersModule
   ],
   providers: [
     FeedbackService
