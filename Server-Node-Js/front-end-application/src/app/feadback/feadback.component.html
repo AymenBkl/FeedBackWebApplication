@@ -1,3 +1,5 @@
+
+<div fxFlex fxFlexOffset="20px" class="form-size">
 <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()"  >
   <p>
     <mat-form-field class="half-width">
@@ -25,7 +27,7 @@
 
   <p>
     <mat-form-field class="full-width">
-      <textarea matInput formControlName="feedbackMessage" placeholder="Your Feedback" rows=12></textarea>
+      <textarea matInput formControlName="feedbackMessage" placeholder="Leave us us a Message" rows=12></textarea>
     </mat-form-field>
     <mat-error *ngIf="formErrors.feedbackMessage">
       {{formErrors.feedbackMessage}}
@@ -36,3 +38,5 @@
   Submit
 </button>
 </form>
+
+</div>>

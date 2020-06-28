@@ -6,7 +6,7 @@ import { formErrors } from './formErrors';
 @Component({
   selector: 'app-feadback',
   templateUrl: './feadback.component.html',
-  styleUrls: ['./feadback.component.css']
+  styleUrls: ['./feadback.component.scss']
 })
 export class FeadbackComponent implements OnInit {
 
@@ -25,10 +25,10 @@ export class FeadbackComponent implements OnInit {
 
   createForm() : void {
     this.feedbackForm = this.foormBuilder.group({
-      firstName : ['',[Validators.required]],
-      lastName : ['',[Validators.required]],
-      email : ['',[Validators.required]],
-      rating : ['',[Validators.required]],
+      firstName : ['',[Validators.required,Validators.minLength(2),Validators.maxLength(25)]],
+      lastName : ['',[Validators.required,Validators.minLength(2),Validators.maxLength(25)]],
+      email : ['',[Validators.required,Validators.email]],
+      rating : [1,[Validators.required]],
       feedbackMessage : ['',[Validators.required]]
     });
 
@@ -42,7 +42,9 @@ export class FeadbackComponent implements OnInit {
 
   onSubmit() : void {
     this.feedback = this.feedbackForm.value;
-    this.feedbackFormDirective.reset();
+    this.resetForm();
+
+    this.feedbackFormDirective.resetForm();
   }
 
 
@@ -64,6 +66,16 @@ export class FeadbackComponent implements OnInit {
         }
       }
     }
+  }
+
+  resetForm() : void {
+    this.feedbackForm.reset({
+        firstName : '',
+       lastName: '',
+       email : '',
+       rating : 1,
+       feedbackMessage : ''
+    })
   }
 
 }
