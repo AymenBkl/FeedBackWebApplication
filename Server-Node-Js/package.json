@@ -1,0 +1,14 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "a tp for web module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aymen Abdelmoumen Boukhelkhal",
+  "license": "ISC",
+  "dependencies": {
+    "express-generator": "^4.16.1"
+  }
+}
