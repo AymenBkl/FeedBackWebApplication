@@ -3,6 +3,7 @@ import { Feedback } from '../Models/feedback';
 import { FormGroup , FormBuilder , Validator, Validators} from '@angular/forms';
 import { validationMessages } from './formsValidation';
 import { formErrors } from './formErrors';
+import {  FeedbackService } from '../Services/feedback.service';
 @Component({
   selector: 'app-feadback',
   templateUrl: './feadback.component.html',
@@ -16,7 +17,8 @@ export class FeadbackComponent implements OnInit {
   formErrors = formErrors;
   validationMessages = validationMessages;
 
-  constructor(private foormBuilder : FormBuilder) {
+  constructor(private foormBuilder : FormBuilder,
+              private feedbackService : FeedbackService) {
     this.createForm();
    }
 
@@ -42,8 +44,8 @@ export class FeadbackComponent implements OnInit {
 
   onSubmit() : void {
     this.feedback = this.feedbackForm.value;
+    this.postFeedback();
     this.resetForm();
-    console.log(this.feedback);
     this.feedbackFormDirective.resetForm();
   }
 
@@ -78,4 +80,13 @@ export class FeadbackComponent implements OnInit {
     })
   }
 
+  postFeedback() : void {
+    this.feedbackService.postFeedBack(this.feedback)
+      .subscribe(feedback => {
+        console.log(feedback);
+      },
+      error => {
+        console.log(error);
+      }  )
+  }
 }
