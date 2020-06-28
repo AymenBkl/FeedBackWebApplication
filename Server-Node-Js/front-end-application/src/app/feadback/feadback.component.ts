@@ -5,11 +5,19 @@ import { validationMessages } from './formsValidation';
 import { formErrors } from './formErrors';
 import {  FeedbackService } from '../Services/feedback.service';
 import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,MatSnackBarConfig} from '@angular/material/snack-bar';
-
+import { flyInOut,expand } from '../Animations/animations';
 @Component({
   selector: 'app-feadback',
   templateUrl: './feadback.component.html',
   styleUrls: ['./feadback.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+    },
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 
 })
 export class FeadbackComponent implements OnInit {

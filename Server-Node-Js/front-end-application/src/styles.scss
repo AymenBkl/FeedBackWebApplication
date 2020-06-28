@@ -49,10 +49,10 @@ body {
 }
 
 .highlight {
-  background-color: $background-pale;
-  border: 1px solid $primary-color-dark;
+  background-color: $background-dark;
+  border: 1px solid $background-dark;
   z-index: 1;
-  transform: scale(1.01);
+  transform: scale(1.075);
 }
 
 .example-card {
