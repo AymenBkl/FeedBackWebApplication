@@ -43,7 +43,7 @@ export class FeadbackComponent implements OnInit {
   onSubmit() : void {
     this.feedback = this.feedbackForm.value;
     this.resetForm();
-
+    console.log(this.feedback);
     this.feedbackFormDirective.resetForm();
   }
 

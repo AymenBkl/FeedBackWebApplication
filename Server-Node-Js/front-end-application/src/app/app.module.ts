@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material';
 
 
 
@@ -37,7 +38,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
