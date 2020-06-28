@@ -17,6 +17,10 @@ A small web  Application that built with  both angular as front-end framework an
   
       It cool to call some attributes in your element for example a class or style ext .. , with directives things become mush easier you can use those directives to define listners,styles and to mush more , the cool part about them is your can use them just like attributes .
       
+  ## Form Validation 
+  
+      form validation is one of the important thing in web developement , but with angular form validation becomes mush easier with both way directive forms or reactive forms you can controll and see what the user is typing and that how you get what you need from the user . Also for security stuffs (this not our subject :) ) . 
+      
  ## Implementation 
  
   ```bash
