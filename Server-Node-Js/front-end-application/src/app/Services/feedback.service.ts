@@ -21,7 +21,17 @@ export class FeedbackService {
         'Content-Type':  'application/json'
       })
     };
-    return this.httpClient.post<Feedback>(baseURL + "feedback",feedback,httpOptions)
+    return this.httpClient.post<Feedback>(baseURL + "users/feedback",JSON.stringify(feedback),httpOptions)
             .pipe(catchError(this.proccesHttpMessage.handleError));
+  }
+
+  postTest() : Observable<Feedback> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.httpClient.post<any>(baseURL + "users/test",JSON.stringify({'name':'lol'}),httpOptions)
+              .pipe(catchError(this.proccesHttpMessage.handleError));
   }
 }

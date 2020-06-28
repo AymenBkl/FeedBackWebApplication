@@ -16,6 +16,7 @@ export class FeadbackComponent implements OnInit {
   feedbackForm : FormGroup;
   formErrors = formErrors;
   validationMessages = validationMessages;
+  onProgress = "Normal";
 
   constructor(private foormBuilder : FormBuilder,
               private feedbackService : FeedbackService) {
@@ -23,6 +24,13 @@ export class FeadbackComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.feedbackService.postTest()
+      .subscribe(data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      } );
   }
 
   createForm() : void {
@@ -81,11 +89,14 @@ export class FeadbackComponent implements OnInit {
   }
 
   postFeedback() : void {
+    this.onProgress = "Posting";
     this.feedbackService.postFeedBack(this.feedback)
       .subscribe(feedback => {
+        this.onProgress = "Normal";
         console.log(feedback);
       },
       error => {
+        this.onProgress = "Error";
         console.log(error);
       }  )
   }

@@ -39,10 +39,16 @@
       {{formErrors.feedbackMessage}}
     </mat-error>
   </p>
+  <div *ngIf="onProgress=='Normal'">
   <button type="submit" mat-button class="background-primary text-floral-white"
   [disabled]="feedbackForm.invalid">
   Submit
 </button>
+</div>
+<div *ngIf="onProgress=='Posting'">
+
+</div>
+
 </form>
 
 </div>>
