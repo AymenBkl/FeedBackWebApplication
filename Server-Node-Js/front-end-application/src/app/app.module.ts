@@ -19,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material';
 import { FeedbackService } from './Services/feedback.service';
 import { MatSnackBarModule} from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -44,7 +46,9 @@ import { MatSnackBarModule} from '@angular/material';
     MatButtonModule,
     MatSliderModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     FeedbackService

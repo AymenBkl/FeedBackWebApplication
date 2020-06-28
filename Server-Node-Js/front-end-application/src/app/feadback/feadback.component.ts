@@ -4,7 +4,7 @@ import { FormGroup , FormBuilder , Validator, Validators} from '@angular/forms';
 import { validationMessages } from './formsValidation';
 import { formErrors } from './formErrors';
 import {  FeedbackService } from '../Services/feedback.service';
-import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import {MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-feadback',
@@ -18,6 +18,7 @@ export class FeadbackComponent implements OnInit {
   feedback : Feedback;
   feedbackForm : FormGroup;
   formErrors = formErrors;
+  feedbacks : Feedback[];
   validationMessages = validationMessages;
   onProgress = "Normal";
   horizontalPosition : MatSnackBarHorizontalPosition = "center";
@@ -30,7 +31,7 @@ export class FeadbackComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.openSnackBar("TEST","TEST");
+    this.getFeedbacks();
   }
 
   createForm() : void {
@@ -107,7 +108,19 @@ export class FeadbackComponent implements OnInit {
     this.snackBar.open(message, action, {
       duration: 2000,
       horizontalPosition : this.horizontalPosition,
-      verticalPosition : this.verticalPosition
+      verticalPosition : this.verticalPosition,
+
     });
+  }
+
+  getFeedbacks() : void {
+    this.feedbackService.getFeedbacks()
+        .subscribe(
+          feedbacks => {
+            this.feedbacks = feedbacks.slice(0,5);
+          },
+          error => {
+            console.log(error);
+          })
   }
 }

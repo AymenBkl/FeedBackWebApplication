@@ -34,4 +34,9 @@ export class FeedbackService {
     return this.httpClient.post<any>(baseURL + "users/test",JSON.stringify({'name':'lol'}),httpOptions)
               .pipe(catchError(this.proccesHttpMessage.handleError));
   }
+
+  getFeedbacks() : Observable<Feedback[]> {
+    return this.httpClient.get<Feedback[]>(baseURL + "users/feedbacks")
+      .pipe(catchError(this.proccesHttpMessage.handleError));
+  }
 }
