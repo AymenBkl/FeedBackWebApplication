@@ -4,10 +4,13 @@ import { FormGroup , FormBuilder , Validator, Validators} from '@angular/forms';
 import { validationMessages } from './formsValidation';
 import { formErrors } from './formErrors';
 import {  FeedbackService } from '../Services/feedback.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-feadback',
   templateUrl: './feadback.component.html',
-  styleUrls: ['./feadback.component.scss']
+  styleUrls: ['./feadback.component.scss'],
+
 })
 export class FeadbackComponent implements OnInit {
 
@@ -19,7 +22,8 @@ export class FeadbackComponent implements OnInit {
   onProgress = "Normal";
 
   constructor(private foormBuilder : FormBuilder,
-              private feedbackService : FeedbackService) {
+              private feedbackService : FeedbackService,
+              private snackBar : MatSnackBar) {
     this.createForm();
    }
 
@@ -93,11 +97,19 @@ export class FeadbackComponent implements OnInit {
     this.feedbackService.postFeedBack(this.feedback)
       .subscribe(feedback => {
         this.onProgress = "Normal";
+        this.openSnackBar("Thnak You ! ","SUCESS")
         console.log(feedback);
       },
       error => {
         this.onProgress = "Error";
+        this.openSnackBar("Something Went Wrong","ERROR")
         console.log(error);
       }  )
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }
