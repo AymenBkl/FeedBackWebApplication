@@ -1,3 +1,33 @@
-<p>
-  header works!
-</p>
+<mat-toolbar>
+  <span>XYZAPP</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>feedback</mat-icon>
+  </button>
+</mat-toolbar>
+
+    <mat-grid-list cols="5" >
+      <mat-grid-tile
+          [colspan]="2"
+          [rowspan]="1">
+            <h1>FeedBackApplication</h1>
+      </mat-grid-tile>
+      <mat-grid-tile
+          [colspan]="3"
+          [rowspan]="2">
+          <div fxFlex fxFlex.gt-sm="20%">
+            <img matListAvatar src="/assets/Images/feedback.png" alt="Logo" height="300px" width="300px">
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile
+          [colspan]="2"
+          [rowspan]="1">
+          <p>A simple feedback Application allows you to post a feedback and view other users feedbacks</p>
+        </mat-grid-tile>
+
+
+    </mat-grid-list>
+

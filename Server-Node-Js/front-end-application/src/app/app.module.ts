@@ -21,6 +21,8 @@ import { FeedbackService } from './Services/feedback.service';
 import { MatSnackBarModule} from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule} from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -48,7 +50,9 @@ import { MatListModule } from '@angular/material/list';
     HttpClientModule,
     MatSnackBarModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatGridListModule
   ],
   providers: [
     FeedbackService
